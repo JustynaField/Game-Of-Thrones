@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../../logo.svg';
 import './App.css';
 import { CardList } from '../CardList/CardList';
-// import { Loading } from './Loading.js';
+// import { Loader } from '../Loader/Loader';
 
 class App extends Component {
 
@@ -16,6 +16,7 @@ class App extends Component {
       console.log('error obtaining houses data:', e)
     })
   }
+
 
   render() {
     return (

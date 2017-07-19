@@ -1,0 +1,4 @@
+const HousesReducer = (state, action) => {
+
+  
+}

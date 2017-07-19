@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import HousesReducer from './HousesReducer';
 
 const rootReducer = combineReducers({
-  houses: HousesReducer
+  HousesReducer
 })
 
 export default rootReducer;

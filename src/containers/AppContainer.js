@@ -1,11 +1,20 @@
 import { connect } from 'react-redux';
 import App from '../components/App/App';
-// import action
+import { receiveHouses } from '../actions/index';
 
 const mapStateToProps = (state) => {
+  console.log('state in container:', state)
   return {
-    houses: state.houses
+    homes: state.HousesReducer
   }
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    displayHouses: (data) => {
+      dispatch(receiveHouses(data))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

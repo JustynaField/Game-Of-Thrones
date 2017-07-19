@@ -10,13 +10,12 @@ export const CardList = ({ houses }) => {
   }
 
   const eachHouse = houses.map((household, index) => {
-console.log('household', household)
     return <Card key={index} {...household} />
   })
 
 
   return (
-    <div>
+    <div className='Container'>
       { eachHouse }
     </div>
   )

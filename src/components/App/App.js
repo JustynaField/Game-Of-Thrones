@@ -10,12 +10,40 @@ class App extends Component {
     fetch('http://localhost:3001/api/v1/houses')
     .then(res => res.json())
     .then(data => {
+
+
+    const members = data.map(house => {
+      const links = house.swornMembers.map(link =>
+        fetch(link)
+        .then(res => res.json())
+        .then(a => {
+          // console.log(a.name)
+          return a.name
+        })
+        .catch(e => console.log('Error fetching house members:', e))
+      )
+
+      return Promise.all(links)
+        .then(values => {
+          return Object.assign(house, {members: values})
+        })
+
+        return Promise.all(members)
+      })
+
+      console.log(data)
       this.props.displayHouses(data)
     })
+    
     .catch(e => {
       console.log('error obtaining houses data:', e)
     })
   }
+
+
+
+
+
 
 
   render() {

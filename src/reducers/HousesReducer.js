@@ -4,6 +4,10 @@ const HousesReducer = (state=[], action) => {
     case 'RECEIVE_HOUSES':
       // return [...state, Object.assign({}, action.houses)]
       return [...action.houses]
+
+    case 'RECEIVE_MEMBERS':
+      return [...action.members]
+
     default:
     return state
   }

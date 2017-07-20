@@ -5,3 +5,11 @@ export const receiveHouses = (houses) => {
     houses
   }
 }
+
+export const receiveMembers = (members) => {
+
+  return {
+    type: 'RECEIVE_MEMBERS',
+    members
+  }
+}

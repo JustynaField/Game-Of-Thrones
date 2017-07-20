@@ -20,30 +20,28 @@ class App extends Component {
           // console.log(a.name)
           return a.name
         })
-        .catch(e => console.log('Error fetching house members:', e))
+        // .catch(e => console.log('Error fetching house members:', e))
       )
 
       return Promise.all(links)
         .then(values => {
+
           return Object.assign(house, {members: values})
         })
-
-        return Promise.all(members)
       })
 
-      console.log(data)
+        return Promise.all(members)
+
+      })
+
+    .then(data =>
       this.props.displayHouses(data)
-    })
-    
+    )
+
     .catch(e => {
       console.log('error obtaining houses data:', e)
     })
   }
-
-
-
-
-
 
 
   render() {

@@ -2,9 +2,14 @@ import React from 'react';
 import './Card.css';
 
 export const Card = ({ name, founded, seats, titles, coatOfArms, ancestralWeapons, words, members}) => {
-console.log('members', members)
+
+  const swornMembers = members.map((member, i) => {
+    return <p key={i}>{member}</p>
+  })
+
+
   return (
-    <div className='flip-container' onTouchStart="this.classList.toggle('hover');">
+    <div className='flip-container'>
       <div className='flipper'>
         <div className='Card front'>
           <h2>{name}</h2>
@@ -16,10 +21,9 @@ console.log('members', members)
           <p>Words: {words ? words : 'N/A'}</p>
         </div>
 
-
         <div className='Card back'>
           <h2>Sworn Members:</h2>
-
+          <div className='members'>{swornMembers}</div>
 
         </div>
       </div>
